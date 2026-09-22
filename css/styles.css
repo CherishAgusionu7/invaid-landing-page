@@ -1,0 +1,504 @@
+/* =====================================================
+   InvAid Landing Page
+   Main Stylesheet
+   ===================================================== */
+
+
+/* ---------- CSS Variables ---------- */
+
+:root {
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --primary-light: #eef2ff;
+
+    --dark: #111827;
+    --text: #4b5563;
+    --light-text: #6b7280;
+
+    --background: #ffffff;
+    --soft-background: #f8fafc;
+    --border: #e5e7eb;
+
+    --max-width: 1180px;
+}
+
+
+/* ---------- Global Styles ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* ---------- Navigation ---------- */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 18px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--dark);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 32px;
+}
+
+nav ul a {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+nav ul a:hover {
+    color: var(--primary);
+}
+
+nav > a:last-child {
+    background-color: var(--primary);
+    color: white;
+
+    padding: 10px 20px;
+    border-radius: 8px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+nav > a:last-child:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+
+/* ---------- Hero ---------- */
+
+#hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 24px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            var(--primary-light),
+            #ffffff 60%
+        );
+}
+
+#hero > div {
+    max-width: 850px;
+}
+
+#hero > div > p:first-child {
+    display: inline-block;
+
+    color: var(--primary);
+    background-color: var(--primary-light);
+
+    padding: 7px 14px;
+    border-radius: 50px;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 24px;
+}
+
+#hero h1 {
+    font-size: clamp(3rem, 7vw, 5.4rem);
+    line-height: 1.02;
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+}
+
+#hero h1 + p {
+    max-width: 650px;
+
+    margin: 0 auto 36px;
+
+    color: var(--text);
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+#hero a {
+    display: inline-block;
+
+    background-color: var(--primary);
+    color: white;
+
+    padding: 16px 28px;
+    border-radius: 10px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.2);
+
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+#hero a:hover {
+    background-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 14px 35px rgba(79, 70, 229, 0.25);
+}
+
+#hero a + p {
+    color: var(--light-text);
+
+    font-size: 0.8rem;
+
+    margin-top: 14px;
+}
+
+
+/* ---------- Features ---------- */
+
+#features {
+    max-width: var(--max-width);
+
+    margin: 0 auto;
+
+    padding: 110px 24px;
+}
+
+#features > h2,
+#how-it-works > h2 {
+    text-align: center;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    letter-spacing: -2px;
+
+    margin-bottom: 14px;
+}
+
+#features > h2 + p {
+    max-width: 600px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+    color: var(--text);
+
+    font-size: 1.05rem;
+}
+
+#features > div {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+#features article {
+    padding: 36px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background-color: white;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+#features article:hover {
+    transform: translateY(-5px);
+
+    border-color: #c7d2fe;
+
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+#features article h3 {
+    font-size: 1.2rem;
+
+    margin-bottom: 12px;
+}
+
+#features article p {
+    color: var(--text);
+}
+
+
+/* ---------- How It Works ---------- */
+
+#how-it-works {
+    background-color: var(--soft-background);
+
+    padding: 110px 24px;
+}
+
+#how-it-works > div {
+    max-width: var(--max-width);
+
+    margin: 60px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 40px;
+}
+
+#how-it-works article {
+    text-align: center;
+
+    padding: 25px;
+}
+
+#how-it-works article > p:first-child {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background-color: var(--primary);
+    color: white;
+
+    font-weight: 800;
+}
+
+#how-it-works h3 {
+    font-size: 1.25rem;
+
+    margin-bottom: 10px;
+}
+
+#how-it-works article p:last-child {
+    color: var(--text);
+}
+
+
+/* ---------- Testimonial ---------- */
+
+#testimonial {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 120px 24px;
+
+    text-align: center;
+}
+
+#testimonial blockquote {
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 25px;
+}
+
+#testimonial p {
+    color: var(--light-text);
+
+    font-weight: 600;
+}
+
+
+/* ---------- Final CTA ---------- */
+
+#signup {
+    max-width: 1100px;
+
+    margin: 0 auto 100px;
+
+    padding: 80px 30px;
+
+    text-align: center;
+
+    background-color: var(--dark);
+
+    border-radius: 24px;
+
+    color: white;
+}
+
+#signup h2 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+
+    letter-spacing: -2px;
+
+    margin-bottom: 16px;
+}
+
+#signup > p:first-of-type {
+    color: #d1d5db;
+
+    margin-bottom: 30px;
+
+    font-size: 1.05rem;
+}
+
+#signup a {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    border-radius: 9px;
+
+    background-color: white;
+
+    color: var(--dark);
+
+    font-weight: 800;
+
+    transition: transform 0.2s ease,
+                background-color 0.2s ease;
+}
+
+#signup a:hover {
+    transform: translateY(-2px);
+
+    background-color: var(--primary-light);
+}
+
+#signup a + p {
+    margin-top: 14px;
+
+    color: #9ca3af;
+
+    font-size: 0.8rem;
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 45px 24px;
+
+    text-align: center;
+
+    color: var(--light-text);
+
+    font-size: 0.85rem;
+}
+
+footer p:first-child {
+    color: var(--dark);
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+footer p:nth-child(2) {
+    margin-bottom: 8px;
+}
+
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 768px) {
+
+    nav ul {
+        display: none;
+    }
+
+    #hero {
+        min-height: auto;
+
+        padding: 90px 20px;
+    }
+
+    #hero h1 {
+        letter-spacing: -2.5px;
+    }
+
+    #features,
+    #how-it-works,
+    #testimonial {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    #features > div,
+    #how-it-works > div {
+        grid-template-columns: 1fr;
+    }
+
+    #signup {
+        margin: 0 20px 70px;
+
+        padding: 60px 25px;
+
+        border-radius: 18px;
+    }
+}
